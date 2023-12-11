@@ -1,0 +1,58 @@
+body {
+    font-family: 'Futura', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://external-preview.redd.it/JODjE-oa4Lw5f7VM1DeDcisbElhKaFBEa61R23OqWr4.jpg?auto=webp&s=e0d841a9a9b0a4a022a30231771d94233487f724');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+label, button, p {
+    display: block;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: 95%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#prediction {
+    text-align: center;
+    font-size: 1.5em;
+}

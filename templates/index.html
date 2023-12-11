@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Películas</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h1>Submit a review!!</h1>
+        <h2>Please enter a review, and we'll let you know if it's positive or negative. </h2>
+
+        <div>
+            <input type="text" id="feature" name="feature" required placeholder="Review" >
+        </div>
+
+        <button onclick="predict()">Prediction</button>
+
+        <p id="prediction"></p>
+        <p id="texto"></p>
+    </div>
+
+    <script>
+        document.querySelector("#feature").addEventListener("keyup", event => {
+            if(event.key !== "Enter") return;
+            predict();
+        });
+
+        async function predict() {
+            const feature = document.getElementById('feature').value;
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ feature })
+            });
+
+            const result = await response.json();
+
+            document.getElementById('prediction').innerText = `Prediction: ${result.prediction}`;
+        }
+    </script>
+</body>
+</html>
